@@ -1,0 +1,21 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    consumer:
+      topic: "new-task"
+      group: "new-task"
+    producer:
+      topic: "new-video"
+      topic-info-video: "info-video"
+redis:
+  host: ${REDIS_HOST}
+  port: ${REDIS_PORT}
+  password: ${REDIS_PASSWORD}
+#  tls:
+#    password: changeit
+queue-size: ${QUEUE_SIZE}
+
+#logging:
+#  level:
+#    io.lettuce.core: DEBUG
+#    org.springframework.data.redis: DEBUG

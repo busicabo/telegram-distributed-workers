@@ -1,0 +1,15 @@
+services:
+  task-distributor:
+    container_name: task-distributor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${HOST_IP}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      QUEUE_SIZE: 10
+    networks: [backend]
+networks:
+  backend:

@@ -1,0 +1,65 @@
+# =========================
+# Sensitive / Private Data
+# =========================
+**/tdlib-db/
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/*.binlog
+**/*.session
+**/*.cookies
+**/*.cookie
+**/*.secret
+**/*.json.secret
+
+.env
+.env.*
+
+# =========================
+# Runtime / Application Data
+# =========================
+data/
+storage/
+volumes/
+docker-data/
+docker-volumes/
+tmp/
+temp/
+cache/
+logs/
+
+*.log
+
+# =========================
+# Docker
+# =========================
+**/docker-data/
+**/volumes/
+
+# =========================
+# IDEs
+# =========================
+.idea/
+.vscode/
+*.iml
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build / Java / Gradle
+# =========================
+target/
+out/
+build/
+.gradle/
+
+# =========================
+# Misc
+# =========================
+node_modules/
+__pycache__/
+*.pyc

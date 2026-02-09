@@ -1,0 +1,39 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    sasl.jaas.config: ${KAFKA_SASL}
+    producer:
+      topic: "new-task"
+    consumer:
+      topic-info-video: "info-video"
+      group-info-video: "info-video"
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  application:
+    name: telegramBot
+chat-id: ${TG_CHATS}
+bot:
+  data:
+    name: ${BOT_NAME}
+    token: ${BOT_TOKEN}
+    url: ${BOT_URL}
+    path: "/telegram"
+cookies:
+  browserPath: /config/profile
+
+logging:
+  level:
+    root: INFO
+    org.apache.kafka: WARN
+  file:
+    name: bot.log
+    path: /

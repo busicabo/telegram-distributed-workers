@@ -1,0 +1,30 @@
+services:
+  bot:
+    container_name: bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      PARTITION: ${PARTITION}
+      TDLIB_ID: ${TDLIB_ID}
+      TDLIB_HASH: ${TDLIB_HASH}
+      TDLIB_PHONE_NUMBER: ${TDLIB_PHONE_NUMBER}
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      TG_CHATS: ${TG_CHATS}
+      POOL_TASK: 3
+    volumes:
+      - firefox-data:/config
+  firefox:
+    image: jlesage/firefox
+    ports:
+      - "5800:5800"
+    volumes:
+      - firefox-data:/config
+volumes:
+  firefox-data:
+    name: firefox-data
+
+
