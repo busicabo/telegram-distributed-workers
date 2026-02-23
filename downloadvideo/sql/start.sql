@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS video_data (
   video_data_audio_id varchar(20),
   video_data_audio_ru_id varchar(20),
   video_data_audio_en_id varchar(20),
+  video_data_audio_uk_id varchar(20),
   video_data_process varchar(30) DEFAULT 'INFO',
 
   video_data_created_at timestamptz DEFAULT now(),
